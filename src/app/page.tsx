@@ -46,6 +46,7 @@ import {
   getClub
 } from '@/services/BrawlAPIClient';
 import { LabTab } from '@/components/brawl/LabTab';
+import { RankedTab } from '@/components/brawl/RankedTab';
 import { BrawlerAvatar, BrawlerGrid, setBrawlerImageCache } from '@/components/brawl/BrawlerAvatar';
 import { getBrawlerMeta, TIER_LIST_2026, META_VERSION } from '@/services/MetaDataService';
 import { getMapImage, getModeDisplayName, getGadgetIcon, getStarPowerIcon, getGearIcon } from '@/services/AssetService';
@@ -92,7 +93,7 @@ interface RealTimeGuide {
 // ============ MAIN COMPONENT ============
 export default function BrawlTrackerUltimate() {
   // Navigation
-  const [activeTab, setActiveTab] = useState<'home' | 'brawlers' | 'rankings' | 'events' | 'analysis' | 'lab'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'brawlers' | 'rankings' | 'events' | 'analysis' | 'ranked' | 'lab'>('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Player Data
@@ -416,6 +417,7 @@ export default function BrawlTrackerUltimate() {
                 { id: 'rankings', icon: Medal, label: 'Rankings' },
                 { id: 'events', icon: Radio, label: 'Events' },
                 { id: 'analysis', icon: Sparkles, label: 'Analysis' },
+                { id: 'ranked', icon: Crown, label: 'RANKED' },
                 { id: 'lab', icon: Zap, label: 'LAB' },
               ].map((item) => (
                 <button
@@ -536,6 +538,7 @@ export default function BrawlTrackerUltimate() {
                     { id: 'rankings', icon: Medal, label: 'Rankings' },
                     { id: 'events', icon: Radio, label: 'Events' },
                     { id: 'analysis', icon: Sparkles, label: 'Analysis' },
+                    { id: 'ranked', icon: Crown, label: 'RANKED' },
                     { id: 'lab', icon: Zap, label: 'LAB' },
                   ].map((item) => (
                     <button
@@ -598,7 +601,7 @@ export default function BrawlTrackerUltimate() {
             )}
 
             {/* Welcome Screen */}
-            {!player && !isLoading && (
+            {!player && !isLoading && activeTab !== 'ranked' && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -651,6 +654,13 @@ export default function BrawlTrackerUltimate() {
                   <span className="text-gray-600">•</span>
                   <span>IP: 213.22.190.252</span>
                 </div>
+              </motion.div>
+            )}
+
+            {/* RANKED TAB - Available without player */}
+            {activeTab === 'ranked' && !isLoading && (
+              <motion.div key="ranked" {...fadeIn}>
+                <RankedTab />
               </motion.div>
             )}
 
