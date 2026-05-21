@@ -98,24 +98,28 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Glass morphism utility */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass:hover {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -142,8 +146,8 @@
 }
 
 .brawler-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.12);
 }
 
 /* Pulse animation for live indicators */
@@ -163,12 +167,12 @@
 }
 
 .nav-item:hover {
-  background: rgba(245, 158, 11, 0.08);
+  background: rgba(245, 158, 11, 0.06);
   border-left-color: rgba(245, 158, 11, 0.3);
 }
 
 .nav-item.active {
-  background: rgba(245, 158, 11, 0.12);
+  background: rgba(245, 158, 11, 0.1);
   border-left-color: #f59e0b;
   color: #f59e0b;
 }
@@ -218,4 +222,10 @@
   height: 3px;
   background: #f59e0b;
   border-radius: 0 0 4px 4px;
+}
+
+/* Select option styling for dark mode */
+select option {
+  background: #18181b;
+  color: #fafafa;
 }

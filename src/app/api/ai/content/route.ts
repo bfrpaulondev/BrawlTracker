@@ -3,12 +3,12 @@ import { contentCreator, extractJSON } from '@/services/groq-service';
 
 export async function POST(request: NextRequest) {
   try {
-    const { playerData, platform, topic } = await request.json();
-    const context = `Jogador: ${playerData || 'Não disponível'}. Plataforma: ${platform || 'YouTube'}. Tópico: ${topic || 'Geral'}. Gere 5-8 ideias de conteúdo. Formato JSON: [{ title, platform, format, description, hooks[], estimatedViews, difficulty }]`;
+    const { topic, platform, format } = await request.json();
+    const context = `Tópico: ${topic || 'Brawl Stars geral'}. Plataforma: ${platform || 'YouTube'}. Formato: ${format || 'Vídeo'}. Gere ideias de conteúdo criativas para criador de Brawl Stars. Formato JSON: { ideas: [{ title, platform, format, description, hooks: [], estimatedViews, difficulty, trendingScore }], contentStrategy: { bestPostingTimes: [], frequencyTip, engagementTip } }`;
     const result = await contentCreator(context);
     const json = extractJSON(result);
     return NextResponse.json(JSON.parse(json));
   } catch (e: any) {
-    return NextResponse.json({ error: 'Erro ao gerar conteúdo' }, { status: 500 });
+    return NextResponse.json({ error: 'Erro ao gerar ideias de conteúdo', details: e.message }, { status: 500 });
   }
 }

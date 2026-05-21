@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getEvents } from '@/services/brawl-api';
 
 export async function GET() {

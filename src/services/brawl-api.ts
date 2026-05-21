@@ -27,6 +27,10 @@ export async function getBrawlers() {
   return fetchBrawlAPI('/brawlers');
 }
 
+export async function getBrawlerById(id: number) {
+  return fetchBrawlAPI('/brawlers/' + id);
+}
+
 export async function getEvents() {
   return fetchBrawlAPI('/events/rotation');
 }
@@ -42,4 +46,9 @@ export async function getBrawlerRankings(countryCode: string, brawlerId: number,
 export async function getClub(tag: string) {
   const encoded = encodeURIComponent(tag);
   return fetchBrawlAPI('/clubs/' + encoded);
+}
+
+export async function getClubMembers(tag: string) {
+  const encoded = encodeURIComponent(tag);
+  return fetchBrawlAPI('/clubs/' + encoded + '/members');
 }

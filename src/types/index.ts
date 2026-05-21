@@ -1,3 +1,7 @@
+// =============================================
+// BRAWLTRACKER v4 - TYPES
+// =============================================
+
 export interface Player {
   tag: string;
   name: string;
@@ -182,4 +186,78 @@ export interface ProgressionDay {
   estimatedTrophies: number;
 }
 
-export type TabId = 'dashboard' | 'brawlers' | 'events' | 'rankings' | 'club' | 'coach' | 'draft' | 'advisor' | 'analysis' | 'push' | 'meta' | 'progression' | 'f2p' | 'calculator' | 'goals' | 'content' | 'titles' | 'schedule' | 'script' | 'recording' | 'trends';
+export interface GoalTracker {
+  id: string;
+  title: string;
+  target: number;
+  current: number;
+  unit: string;
+  deadline: string;
+  createdAt: string;
+}
+
+export interface F2PGuide {
+  priority: string;
+  items: { name: string; cost: string; value: string; reason: string }[];
+  monthlyEstimate: string;
+  tips: string[];
+}
+
+export interface ResourceCalc {
+  type: string;
+  current: number;
+  target: number;
+  needed: number;
+  coinCost: number;
+  gemCost: number;
+  timeEstimate: string;
+}
+
+export interface ScheduleWeek {
+  days: { day: string; slots: { time: string; content: string; platform: string; status: string }[] }[];
+  tips: string[];
+}
+
+export interface TrendData {
+  topic: string;
+  platform: string;
+  volume: string;
+  trend: 'rising' | 'stable' | 'declining';
+  suggestion: string;
+}
+
+export interface BattleAnalysis {
+  summary: string;
+  keyMoments: string[];
+  whatWentWrong: string[];
+  whatWentRight: string[];
+  improvementTips: string[];
+  brawlerRating: number;
+  mvpAnalysis: string;
+}
+
+export interface CounterPick {
+  enemy: string;
+  counters: { name: string; reason: string; effectiveness: number }[];
+  avoid: string[];
+  tips: string[];
+}
+
+export interface MetaReport {
+  topBrawlers: { name: string; winRate: string; pickRate: string; tier: string }[];
+  bestComps: { name: string; brawlers: string[]; mode: string; winRate: string }[];
+  bans: string[];
+  trends: string[];
+  patchImpact: string;
+}
+
+export interface MilestoneChecklist {
+  category: string;
+  items: { name: string; target: number; current: number; unit: string; completed: boolean }[];
+}
+
+export type TabId = 
+  | 'dashboard' | 'brawlers' | 'events' | 'rankings' | 'club'
+  | 'coach' | 'draft' | 'advisor' | 'analysis' | 'battles' | 'push' | 'meta' | 'counters'
+  | 'progression' | 'f2p' | 'calculator' | 'goals' | 'milestones'
+  | 'content' | 'titles' | 'schedule' | 'script' | 'recording' | 'trends';

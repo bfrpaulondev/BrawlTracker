@@ -6,6 +6,7 @@ export async function GET(request: NextRequest) {
   const region = searchParams.get('region') || 'global';
   const type = searchParams.get('type') || 'players';
   const brawlerId = searchParams.get('brawlerId');
+
   try {
     if (brawlerId) {
       const data = await getBrawlerRankings(region, parseInt(brawlerId));

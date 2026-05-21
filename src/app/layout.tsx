@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrawlTracker v3 - Seu Companheiro de Brawl Stars",
-  description: "O app completo para melhorar no Brawl Stars. Coach AI, Tier List, Draft, Progressão e Criação de Conteúdo.",
+  title: "BrawlTracker v4 - Seu Companheiro AI de Brawl Stars",
+  description: "App completo com 22 funcionalidades: Coach AI, Draft, Counter Pick, Meta Tracker, Progressão, Guia F2P, Calculadora, Metas, Criação de Conteúdo e mais!",
   icons: {
     icon: "⚡",
   },
