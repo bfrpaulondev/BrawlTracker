@@ -10,7 +10,7 @@ import {
   Heart, Share2, Lightbulb, RefreshCw, Menu, ChevronDown,
   Play, Info, Plus, Minus, CheckCircle, AlertCircle, ArrowUp,
   Crosshair, BookOpen, Gift, PieChart, Activity, Layers,
-  ArrowRight, Eye, ThumbsUp, MessageSquare, Wand2, SwordsIcon
+  ArrowRight, Eye, ThumbsUp, MessageSquare, Wand2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

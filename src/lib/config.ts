@@ -1,9 +1,10 @@
-# BRAWLTRACKER v4 - CONFIGURAÇÃO CENTRAL
-# As chaves de API estão no arquivo .env (não versionado)
-# =============================================
+// =============================================
+// BRAWLTRACKER v4 - CONFIGURAÇÃO CENTRAL
+// Chaves de API hardcoded (repositório privado)
+// =============================================
 
-export const BRAWL_API_KEY = process.env.BRAWL_API_KEY || '';
-export const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
+export const BRAWL_API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjFhOTUwNWQxLWViMWQtNGZmOS05YjMyLTk2MWVkNjBiMzk5MyIsImlhdCI6MTc3OTM2Njk4Niwic3ViIjoiZGV2ZWxvcGVyL2EzMTYzN2VmLTI0NzgtNmYwMS00NjYxLTA2MmEzNmMwNjc0YSIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMTkzLjEyNi4xMS4yMjkiXSwidHlwZSI6ImNsaWVudCJ9XX0.pFDgJntHVBWXTIXBk5Wk1PMGYBrGI-mqgMiaPgfNtMkOSEo9TzGuxFvvxitmVvtmg3-NTUgX46FgYYoBVbRjYQ';
+export const GROQ_API_KEY = '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';
 
 export const GROQ_BASE_URL = 'https://api.groq.com/openai/v1';
 export const GROQ_PRIMARY_MODEL = 'llama-3.3-70b-versatile';
